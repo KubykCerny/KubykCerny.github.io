@@ -8,7 +8,7 @@
 /* Navigation Bar */
 #navigation_bar {
     display: flex;
-    background-color: #d5d5d5;
+    background-color: green;
     justify-content: flex-end;
     top: 0;
     position: sticky;
@@ -31,11 +31,6 @@
     padding-bottom: 0.5rem;
 }
 
-#navigation_bar ul li a.current,
-#navigation_bar ul li a:hover {
-    border-bottom: 2px solid #000;
-    transition: ease-out all 0.1s;
-}
 
 
 /*Main Section*/
@@ -60,7 +55,7 @@
     justify-content: center;
     width: 9rem;
     height: 3rem;
-    background-color: #646464;
+    background-color: green;
     color: #fff;
     text-decoration: none;
     border: 1px #606060 solid;
@@ -70,7 +65,7 @@
 }
 
 .button:hover{
-    background-color: #444444;
+    background-color: darkgreen;
 }
 
 #main-section form {
@@ -159,7 +154,7 @@
     width: 13rem;
     display: flex;
     justify-content: center;
-    background-color: #646464;
+    background-color: green;
     color: #fff;
     text-decoration: none;
     border: 1px #606060 solid;
