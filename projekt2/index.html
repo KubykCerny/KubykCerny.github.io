@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"    content="Stránka se bude věnovat projektu zabývající se Motorkama">
-    <meta name="keywords" content="Motorcycles">
+    <meta name="keywords" content="Motorcycles, Ducati">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/widescreen.css" media="screen and (min-width: 1100px)">
+    <link rel="stylesheet" href="./css/mobile.css" media="screen and (max-width: 768px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Moto</title>
 </head>
 <body id="home">
 <nav id="navbar">
-    <div id="logo"><a href="index.html"><i class="fa-solid fa-motorcycle"></i><span class="text-primary">Ducati</span></a></div>
+    <div id="logo"><a href="index.html"><i class="fa-solid fa-motorcycle"></i>
+        <span class="text-primary">Ducati</span></a></div>
+
+    <a href="#" id="hambac"><i class="fa fa-bars fa-2x"></i></a>
     <ul>
         <li><a href="#home">Úvod </a></li>
-        <li><a href="#what"> O nás </a></li>
+        <li><a href="#what"> O </a></li>
         <li><a href="#project">Typy motocyklů </a></li>
         <li><a href="#contact">Contact </a></li>
     </ul>
@@ -84,11 +89,11 @@
         <h2 class="m-heading text-center">Ilustrační <span class="text-primary">Obrázky</span></h2>
 
         <div class="items py1">
-            <div><img src="https://images.unsplash.com/photo-1635094742897-3f0014ccc07b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHVjYXRpfGVufDB8MXwwfHw%3D&auto=format&fit=center&w=200&q=100"  alt="ilustrační obrázek"></div>
-            <div><img src="https://images.unsplash.com/photo-1568772585432-0bcd9add44f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVjYXRpfGVufDB8MXwwfHw%3D&auto=format&fit=center&w=200&q=100" alt="ilustrační obrázek"></div>
-            <div><img src="https://images.unsplash.com/photo-1624870380386-412eb2f22187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGR1Y2F0aXxlbnwwfDF8MHx8&auto=format&fit=center&w=200&q=150" alt="ilustrační obrázek"></div>
-            <div><img src="https://images.unsplash.com/photo-1632157256884-9ab327461a01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZHVjYXRpfGVufDB8MXwwfHw%3D&auto=format&fit=center&w=200&q=100" alt="ilustrační obrázek"></div>
-            <div><img src="https://images.unsplash.com/photo-1632157257704-8b1edff239ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZHVjYXRpfGVufDB8MXwwfHw%3D&auto=format&fit=center&w=200&q=100" alt="ilustrační obrázek"></div>
+            <div><img src="https://source.unsplash.com/random/180x300/?ducati"  alt="ilustrační obrázek"></div>
+            <div><img src="https://source.unsplash.com/random/180x300/?ducati" alt="ilustrační obrázek"></div>
+            <div><img src="https://source.unsplash.com/random/180x300/?ducati" alt="ilustrační obrázek"></div>
+            <div><img src="https://source.unsplash.com/random/180x300/?ducati" alt="ilustrační obrázek"></div>
+            <div><img src="https://source.unsplash.com/random/180x300/?ducati" alt="ilustrační obrázek"></div>
         </div>
     </div>
 </section>
@@ -103,7 +108,7 @@
                 <input type="text"
                        name="name"
                        id="name"
-                        placeholder="jméno a příjmení">
+                       placeholder="jméno a příjmení">
             </div>
 
             <div class="form-group">
@@ -128,8 +133,10 @@
                           id="message"
                           cols="30"
                           rows="10"
-                placeholder="zpráva"></textarea>
+                          placeholder="zpráva"></textarea>
             </div>
+
+            <button type="submit" class="btn-dark">Odeslat </button>
 
 
 
@@ -161,6 +168,17 @@
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    $('#navbar #hambac').click(function (){
+        $('#navbar ul').slideToggle("slow")
+    });
+
+    if ($(window).width() < 501 ) {
+        $('#navbar ul').click(function (){
+            $('#navbar ul').hide();
+        });
+    }
+
+
     // Smooth scrolling
     $('#navbar a, .btn').on('click', function (event) {
         if (this.hash !== '') {
@@ -168,7 +186,7 @@
             const hash = this.hash;
             $('html, body').animate(
                 {
-                    scrollTop: $(hash).offset().top - 100
+                    scrollTop: $(hash).offset().top - 260
                 }, 800
             )
         }
@@ -186,11 +204,11 @@
 
         if (cur_pos > 350) {
             document.querySelector('#navbar').style.opacity = 0.9;
-            document.querySelector('#showcase .source').style.display = "none";
+            // document.querySelector('#showcase .source').style.display = "none";
         }
         else {
             document.querySelector('#navbar').style.opacity = 1;
-            document.querySelector('#showcase .source').style.display = "block";
+            // document.querySelector('#showcase .source').style.display = "block";
         }
 
         // Navigation active state on scroll
