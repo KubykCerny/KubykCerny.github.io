@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+    <title>Timeline</title>
+</head>
+<body>
+<header id="header">
+  <h1 class="heading-1">Chris Bumstead timeline</h1>
+  <h3 class="heading-3">Jakub Černý</h3>
+</header>
+<section id="timeline">
+  <ul>
+    <li>
+      <div>
+        <h3 class="heading-3">CBBF Canadian National Bodybuilding Championship Men’s Junior Division, 1st place</h3>
+        <p>2015</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">CBBF Bodybuilding Championships Open Heavyweight Division, 2nd place</h3>
+        <p>2016</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">IFBB North American Bodybuilding Championships, 1st place</h3>
+        <p>2016</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Toronto Pro, 1st place</h3>
+        <p>2017</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 2nd place</h3>
+        <p>2017</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 2nd place</h3>
+        <p>2018</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 1st place</h3>
+        <p>2019</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 1st place</h3>
+        <p>2020</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 1st place</h3>
+        <p>2021</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3 class="heading-3">Mr. Olympia, 1st place</h3>
+        <p>2022</p>
+      </div>
+    </li>
+  </ul>
+</section>
+</body>
+<script>
+  const items = document.querySelectorAll("#timeline li");
+
+  const isInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return (
+  rect.top >= 0 &&
+  rect.left >= 0 &&
+  rect.bottom <=
+  (window.innerHeight || document.documentElement.clientHeight) &&
+  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  };
+
+  const run = () =>
+  items.forEach((item) => {
+  if (isInViewport(item)) {
+  item.classList.add("show");
+  }
+  });
+
+  // Events
+  window.addEventListener("load", run);
+  window.addEventListener("resize", run);
+  window.addEventListener("scroll", run);
+
+</script>
+</html>
