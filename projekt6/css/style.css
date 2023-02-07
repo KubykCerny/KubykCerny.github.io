@@ -5,8 +5,14 @@
     font-family: Arial, sans-serif;
 }
 
+:root {
+    --green-color: #4F7942;
+    --blue-color: #00FFFF;
+    --white-color: #f9fbfc;
+}
+
 body {
-    background-color: white;
+    background-color: var(--white-color);
 }
 
 p {
@@ -25,8 +31,8 @@ p {
 }
 
 #header {
-    background-color: green;
-    color: white;
+    background-color: var(--green-color);
+    color: var(--white-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +42,7 @@ p {
 
 #timeline ul {
     padding: 50px 0;
-    background-color: white;
+    background-color: var(--white-color);
 }
 
 #timeline ul li {
@@ -45,7 +51,7 @@ p {
     width: 6px;
     margin: 0 auto;
     padding-top: 50px;
-    background-color: red;
+    background-color: var(--blue-color);
 }
 
 #timeline ul li div {
@@ -53,8 +59,8 @@ p {
     bottom: 0;
     width: 300px;
     padding: 1rem;
-    background-color: green;
-    color: white;
+    background-color: var(--green-color);
+    color: var(--white-color);
     transition: all 0.5s ease-in-out;
     visibility: hidden;
     opacity: 0;
@@ -93,11 +99,11 @@ p {
     border-radius: 50%;
     transform: translateX(-50%);
     transition: background 0.5s ease-in-out;
-    background-color: green;
+    background-color: var(--green-color);
 }
 
 #timeline ul li.show ::after {
-    background-color: green;
+    background-color: var(--green-color);
 }
 
 #timeline ul li div::before {
@@ -112,13 +118,13 @@ p {
 #timeline ul li:nth-child(odd) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent green transparent transparent;
+    border-color: transparent var(--green-color) transparent transparent;
 }
 
 #timeline ul li:nth-child(even) div::before {
     right: -15px;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent green;
+    border-color: transparent transparent transparent var(--green-color);
 }
 
 
@@ -148,6 +154,6 @@ p {
     #timeline ul li:nth-child(even) div::before {
         left: -15px;
         border-width: 8px 16px 8px 0;
-        border-color: transparent green transparent transparent;
+        border-color: transparent var(--green-color) transparent transparent;
     }
 }
